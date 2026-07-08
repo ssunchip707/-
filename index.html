@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고1 모의 수강신청</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>고1 모의 수강신청</h1>
+    <p>교과 선택 체크리스트 기반 모의 수강신청 시스템</p>
+</header>
+
+
+<main>
+
+    <!-- 필수 안내 -->
+    <section class="notice">
+        <h3>📌 안내</h3>
+        <p>
+            필수 과목은 학교 교육과정에 따라 자동 선택되어 있으며
+            변경할 수 없습니다.
+        </p>
+    </section>
+
+
+    <!-- 과목 영역 -->
+    <section class="subject-container">
+
+        <div class="subject-area">
+
+            <h2>필수 과목</h2>
+
+            <div id="requiredSubjects">
+                <!-- subjects.js에서 생성 -->
+            </div>
+
+        </div>
+
+
+        <div class="subject-area">
+
+            <h2>선택 과목</h2>
+
+            <input 
+                type="text"
+                id="searchInput"
+                placeholder="과목 검색"
+            >
+
+            <div id="optionalSubjects">
+                <!-- subjects.js에서 생성 -->
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- 선택 현황 -->
+    <section class="summary">
+
+        <h2>선택 현황</h2>
+
+        <div class="summary-box">
+
+            <p>
+                선택 과목 수 :
+                <span id="count">0</span>개
+            </p>
+
+
+            <p>
+                총 학점 :
+                <span id="credit">0</span>학점
+            </p>
+
+        </div>
+
+
+        <h3>현재 선택 과목</h3>
+
+        <ul id="selectedList">
+            <!-- 선택 과목 표시 -->
+        </ul>
+
+
+    </section>
+
+
+
+    <!-- 버튼 -->
+    <section class="buttons">
+
+        <button id="resetBtn">
+            초기화
+        </button>
+
+
+        <button id="submitBtn">
+            모의 수강신청
+        </button>
+
+    </section>
+
+
+
+</main>
+
+
+
+
+<!-- 오류창 -->
+
+<div id="errorModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>❌ 신청 오류</h2>
+
+        <p id="errorMessage"></p>
+
+        <button id="closeModal">
+            확인
+        </button>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- 완료창 -->
+
+<div id="successModal" class="modal">
+
+    <div class="modal-content success">
+
+        <h2>✅ 신청 완료</h2>
+
+        <p>
+            모의 수강신청이 완료되었습니다.
+        </p>
+
+
+        <div id="resultArea"></div>
+
+
+        <button id="closeSuccess">
+            확인
+        </button>
+
+    </div>
+
+</div>
+
+
+
+
+
+<script src="subjects.js"></script>
+<script src="validator.js"></script>
+<script src="script.js"></script>
+
+
+</body>
+</html>
